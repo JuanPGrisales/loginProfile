@@ -1,0 +1,19 @@
+#login {
+    border: 2px solid;
+}
+
+#userCreator {
+    border: 2px solid;
+    display: none;
+}
+
+.input {
+    background-color: white;
+    margin:8px;
+    width: 50%; 
+    border-radius: 8px;
+}
+
+#buttons {
+    margin:15px;
+}
