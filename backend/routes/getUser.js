@@ -1,6 +1,9 @@
 const express = require("express")
+const users = require("../../database/users.js");
 let router = express.Router()
+
 router.get("/",function (req, res) {
-    res.send("User Manager")    
+    let username = req.body.username    
+    res.send(users[username]);
 })
 module.exports = router

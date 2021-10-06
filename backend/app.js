@@ -1,8 +1,8 @@
 let indexRouter = require("./routes/index.js")
 let loginRouter = require("./routes/login.js")
-// let createNewUserRouter = require(".routes/createNewUser.js")
-// let updateUserRouter = require(".routes/updateUserRouter.js")
-// let getUserRouter = require(".routes/getUserRouter.js")
+let createNewUserRouter = require("./routes/createNewUser.js")
+let updateUserRouter = require("./routes/updateUser.js")
+let getUserRouter = require("./routes/getUser.js")
 
 const express = require('express')
 const app = express()
@@ -18,9 +18,9 @@ app.use(parser)
 
 app.use("/", indexRouter)
 app.use("/login", loginRouter)
-app.use("/createNewUser", loginRouter) 
-app.use("/updateUser", loginRouter)
-app.use("/getUser", loginRouter)
+app.use("/createNewUser", createNewUserRouter) 
+app.use("/updateUser", updateUserRouter)
+app.use("/getUser", getUserRouter)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

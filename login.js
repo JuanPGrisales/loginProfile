@@ -1,18 +1,23 @@
 class userManager {
+  constructor(){
+    this.users = {}
+  }
+  
   createNewUser(username, password) {
-    users[username] = new user(username, password);
+    this.users[username] = new user(username, password);
     return true;
   }
 
-  updateUser(username, newPassword = null, newEmail = null, newAge = null) {
-    if (!users[username]) return false;
-    if (newPassword != null) users[username].password = newPassword;
-    if (newEmail != null) users[username].email = newEmail;
-    if (newAge != null) users[username].age = newAge;
-    return true;
-  }
+//  updateUser(username, newPassword = null, newEmail = null, newAge = null) {
+//    if (!this.users[username]) return false;
+//    if (newPassword != null) this.users[username].password = newPassword;
+//    if (newEmail != null) this.users[username].email = newEmail;
+//    if (newAge != null) this.users[username].age = newAge;
+//    return true;
+//  }
+
   getUser(username) {
-    return users[username];
+    return this.users[username];
   }
 }
 
@@ -25,7 +30,10 @@ class user {
   }
 }
 
+
+
 let myUserManager = new userManager();
+
 
 // comienzo
 let _password = "1";
@@ -34,7 +42,7 @@ let _email = "1";
 let _age = 1;
 
 console.log(myUserManager.createNewUser(_username, _password)); // true
-console.log(myUserManager.loginUser(_username, _password)); //true
+//console.log(myUserManager.loginUser(_username, _password)); //true
 console.log(myUserManager.getUser(_username)); // {username:"1",email:null}
 
 let _newPassword = "2";
